@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const app = express()
 const { Network } = require('@modular/dmnc-core')
 const config = require('./config.json')
-const port = config.port
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')

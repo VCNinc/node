@@ -13,6 +13,7 @@
     "style": "eslint *.js",
     "validate": "npm run style",
     "release": "np",
+    "test": "npm run validate",
     "postpublish": "npm run deploy",
     "deploy": "gh-pages -d site",
     "start": "nodemon index.js"

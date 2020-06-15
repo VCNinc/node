@@ -21,12 +21,9 @@ require('@modular/standard').config().then((standard) => {
   if (config.modspace !== undefined && config.modspace !== null) network.setCoverage(config.modspace)
 
   app.post('/', (req, res) => {
-    if (req.body.network !== standard.networkIdentifier) return res.status(500).send('Node does not serve the specified network.')
-    network.handleRequests(req.body.requests).then((results) => {
-      return res.status(207).send({
-        network: standard.networkIdentifier,
-        results: results
-      })
+    network.handleQuery(req.body).then((result) => {
+      console.log(result)
+      return res.status(207).send(result)
     }).catch((error) => {
       return res.status(500).send(error.message)
     })

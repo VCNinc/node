@@ -2,8 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const { Network } = require('@modular/dmnc-core')
-const port = process.env.PORT || 3000
 const config = require('./config.json')
+const port = (config.port === undefined) ? 3000 : config.port
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')

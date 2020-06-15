@@ -1,0 +1,51 @@
+{
+  "name": "@modular/node",
+  "version": "0.0.0",
+  "description": "Modular Node (node)",
+  "main": "index.js",
+  "homepage": "https://node.modular.social/",
+  "bugs": {
+    "url": "https://github.com/modular/node/issues",
+    "email": "modzero@protonmail.com"
+  },
+  "private": false,
+  "scripts": {
+    "style": "eslint *.js",
+    "validate": "npm run style",
+    "release": "np",
+    "postpublish": "npm run deploy",
+    "deploy": "gh-pages -d site",
+    "start": "nodemon index.js"
+  },
+  "repository": "github:modular/node",
+  "author": "Modulo <modzero@protonmail.com> (https://github.com/modulo)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.0.0",
+    "nodemon": "^2.0.4",
+    "np": "^6.2.3"
+  },
+  "keywords": [
+    "modular",
+    "network",
+    "networking",
+    "node",
+    "backend",
+    "server"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modular/dmnc-core": "0.0.2",
+    "@modular/standard": "^1.0.5",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

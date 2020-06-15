@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const { Network } = require('@modular/dmnc-core')
 const port = process.env.PORT || 3000
+const config = require('./config.json')
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -14,15 +15,18 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-require('@modular/standard').config().then((config) => {
-  const network = new Network(config)
+require('@modular/standard').config().then((standard) => {
+  const network = new Network(standard)
+
+  if (config.endpoint !== undefined) network.useEndpoint(config.endpoint)
+  if (config.modspace !== undefined) network.setCoverage(config.modspace)
 
   app.post('/', (req, res) => {
-    if(req.body.network !== config.networkIdentifier) return res.status(500).send('Node does not serve the specified network.')
+    if (req.body.network !== standard.networkIdentifier) return res.status(500).send('Node does not serve the specified network.')
     network.handleRequests(req.body.requests).then((results) => {
       return res.status(207).send({
-        "network": config.networkIdentifier,
-        "results": results
+        network: standard.networkIdentifier,
+        results: results
       })
     }).catch((error) => {
       return res.status(500).send(error.message)

@@ -20,9 +20,10 @@ require('@modular/standard').config().then((standard) => {
   if (config.endpoint !== undefined && config.endpoint !== null) network.useEndpoint(config.endpoint)
   if (config.modspace !== undefined && config.modspace !== null) network.setCoverage(config.modspace)
 
+  network.initialize()
+
   app.post('/', (req, res) => {
     network.handleQuery(req.body).then((result) => {
-      console.log(result)
       return res.status(207).send(result)
     }).catch((error) => {
       return res.status(500).send(error.message)

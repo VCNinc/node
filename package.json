@@ -44,9 +44,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@modular/config": "^1.0.7",
-    "@modular/dmnc-core": "0.0.14",
-    "@modular/standard": "^1.0.6",
+    "@modular/config": "^1.0.8",
+    "@modular/dmnc-core": "0.0.16",
+    "@modular/standard": "^1.0.7",
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
   }

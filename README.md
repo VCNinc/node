@@ -1,38 +1,30 @@
-[![Modular Core](https://raw.githubusercontent.com/modular/arithmetic-core/master/site/fmna-core.png "Modular Core")](https://fmna.core.modular.social/ "Modular Core")
+[![Modular Core](https://raw.githubusercontent.com/modular/node/master/site/node.png "Modular Core")](https://fmna.core.modular.social/ "Modular Core")
 
-# Modular Arithmetic Core
-[![GitHub issues](https://img.shields.io/github/issues/modular/arithmetic-core)](https://github.com/modular/arithmetic-core/issues)
-[![GitHub license](https://img.shields.io/github/license/modular/arithmetic-core)](https://github.com/modular/arithmetic-core/blob/master/LICENSE)
-[![GitHub tag](https://img.shields.io/github/tag/modular/arithmetic-core.svg)](https://github.com/modular/arithmetic-core/tags)
-[![GitHub release](https://img.shields.io/github/release/modular/arithmetic-core.svg)](https://github.com/modular/arithmetic-core/releases)
-
+# Modular Node
+[![GitHub issues](https://img.shields.io/github/issues/modular/node)](https://github.com/modular/node/issues)
+[![GitHub license](https://img.shields.io/github/license/modular/node)](https://github.com/modular/node/blob/master/LICENSE)
+[![GitHub tag](https://img.shields.io/github/tag/modular/node.svg)](https://github.com/modular/node/tags)
+[![GitHub release](https://img.shields.io/github/release/modular/node.svg)](https://github.com/modular/node/releases)
 
 [Site](https://fmna.core.modular.social/) |
 [Docs](https://fmna.core.modular.social/docs/) |
-[Contributing](https://github.com/modular/arithmetic-core/blob/master/CONTRIBUTING.md) |
-[Security](https://github.com/modular/arithmetic-core/blob/master/SECURITY.md) |
+[Contributing](https://github.com/modular/node/blob/master/CONTRIBUTING.md) |
+[Security](https://github.com/modular/node/blob/master/SECURITY.md) |
 [Modular](https://github.com/modular) |
 [Modulo](https://github.com/modulo)
 
-The Fast Modular Networking Arithmetic Core (fmna-core) package is a core component of Modular. It performs the modular arithmetic calculations that are used by nodes to determine how to route messages and ensure total network coverage.
+The Modular Node (node) package provides a NodeJS server script for hosting a full node (with HTTPS endpoint) on a Modular Network.
 
 Modular is a an open-source standard for decentralized social communication. It aims to solve the issues of censorship, deplatforming, intrusive adveritsing, poor user privacy that are prevalent on centralized social media platforms. Users on a Modular Network can communicate with eachother across the world without any centralized point of failure.
 
 ## Download
 ### GitHub
-[Download Latest Release](https://github.com/modular/arithmetic-core/releases)
-
-### CDN
-[JSDelivr Page](https://www.jsdelivr.com/package/npm/@modular/fmna-core)
-
-	<script src="https://cdn.jsdelivr.net/npm/@modular/fmna-core/fmna-core.min.js"></script>
+[Download Latest Release](https://github.com/modular/node/releases)
 
 ## Installation
-### In a browser:
-	<script src="fmna-core.min.js"></script>
 
 ### Using npm:
-	npm i --save @modular/fmna-core
+	npm i --save @modular/node
 
-### In Node.js:
-	const { ModularNetwork, ModSpace, CoverageTree } = require('@modular/fmna-core');
+### From github:
+  git clone https://github.com/modular/node

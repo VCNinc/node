@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const { Network } = require('@modular/dmnc-core')
+const { ModularPlatform } = require('@modular/msip-core')
 const config = require('./config.json')
 
 app.use((req, res, next) => {
@@ -14,16 +14,13 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-require('@modular/standard').config().then((standard) => {
-  const network = new Network(standard)
+ModularPlatform.standard().then((platform) => {
+  platform.initialize()
 
-  if (config.endpoint !== undefined && config.endpoint !== null) network.useEndpoint(config.endpoint)
-  if (config.modspace !== undefined && config.modspace !== null) network.setCoverage(config.modspace)
-
-  network.initialize()
+  if (config.endpoint !== undefined && config.endpoint !== null) platform.useEndpoint(config.endpoint)
 
   app.post('/', (req, res) => {
-    network.handleQuery(req.body).then((result) => {
+    platform.network.handleQuery(req.body).then((result) => {
       return res.status(207).send(result)
     }).catch((error) => {
       return res.status(500).send(error.message)

@@ -122,3 +122,6 @@ db
 setup.sh
 modular/db
 *.db
+modular
+modular/db
+modular/*

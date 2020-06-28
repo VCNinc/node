@@ -44,10 +44,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@modular/config": "^1.0.15",
-    "@modular/dmnc-core": "^1.0.1",
     "@modular/msip-core": "^1.0.1",
-    "@modular/standard": "^1.0.17",
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
   }

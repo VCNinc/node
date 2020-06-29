@@ -125,3 +125,5 @@ modular/db
 modular
 modular/db
 modular/*
+posts
+users

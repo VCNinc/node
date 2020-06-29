@@ -1,3 +1,5 @@
+# ssh root@... -i ssh
+
 #!/bin/bash
 
 pm2 delete hello

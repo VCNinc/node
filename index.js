@@ -20,7 +20,7 @@ ModularPlatform.standard().then((platform) => {
   if (config.endpoint !== undefined && config.endpoint !== null) platform.useEndpoint(config.endpoint)
 
   app.get('/', (req, res) => {
-    res.redirect('https://about.modular.net')
+    res.redirect('https://github.com/modular')
   })
 
   app.post('/', (req, res) => {

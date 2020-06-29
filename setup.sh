@@ -2,6 +2,7 @@
 
 #!/bin/bash
 
+su - nodejs
 pm2 delete hello
 git clone https://github.com/modular/node
 cd node

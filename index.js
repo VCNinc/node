@@ -15,9 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 ModularPlatform.standard().then((platform) => {
-  platform.initialize()
-
   if (config.endpoint !== undefined && config.endpoint !== null) platform.useEndpoint(config.endpoint)
+
+  platform.setCoverage('0%1')
+
+  platform.initialize()
 
   app.get('/', (req, res) => {
     res.redirect('https://github.com/modular')

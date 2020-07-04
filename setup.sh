@@ -8,5 +8,6 @@ git clone https://github.com/modular/node
 cd node
 echo "{\"port\":3000,\"endpoint\":\"https://dev.modularseed.xyz\",\"modspace\":\"0%1\"}" > config.json
 npm i
-pm2 start index.js
+pm2 start index.js -i 0 --name modular
 pm2 save
+crontab -e

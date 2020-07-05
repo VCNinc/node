@@ -119,7 +119,6 @@ dist
 
 # db
 db
-setup.sh
 modular/db
 *.db
 modular

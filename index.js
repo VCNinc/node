@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const { ModularPlatform } = require('@modular/msip-core')
-const config = require('./config.json')
+const port = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 ModularPlatform.standard().then((platform) => {
-  if (config.endpoint !== undefined && config.endpoint !== null) platform.useEndpoint(config.endpoint)
+  if (process.env.ENDPOINT !== undefined && process.env.ENDPOINT !== null) platform.useEndpoint(process.env.ENDPOINT)
 
   platform.setCoverage('0%1')
 
@@ -33,5 +33,5 @@ ModularPlatform.standard().then((platform) => {
     })
   })
 
-  app.listen(config.port)
+  app.listen(port)
 })

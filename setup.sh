@@ -1,13 +1,16 @@
-# ssh root@... -i ssh
-
 #!/bin/bash
 
+# to run:
+# ssh root@... -i ssh
+# echo "ENDPOINT=\"https://example.org\"" >> /etc/environment
+# wget -O - https://raw.githubusercontent.com/modular/node/master/setup.sh | bash
+
 su - nodejs
-pm2 delete hello
+pm2 delete all
 git clone https://github.com/modular/node
 cd node
-echo "{\"port\":3000,\"endpoint\":\"https://dev.modularseed.xyz\",\"modspace\":\"0%1\"}" > config.json
 npm i
 pm2 start index.js -i 0 --name modular
 pm2 save
-crontab -e
+echo "* * * * * cd /home/nodejs/node && git fetch --all && git reset --hard origin/master && npm update && pm2 reload modular" >> cron
+crontab cron

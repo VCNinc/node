@@ -125,16 +125,13 @@
 	<body>
 		<header>
 			<div class="container">
-				<div class="io"><img src="fmna-core.png" height="80"></div>
+				<div class="io"><img src="node.png" height="80"></div>
 				<a href="docs/index.html" class="btn btn-primary btn-lg">Documentation</a>
 			</div>
 		</header>
 		<div class="container main">
 			<section class="code">
-<pre><code class="js">let network = new ModularNetwork(2**16);
-network.register({id: 0}, "0%2");
-network.sectorMap(4);
-// → [1, 1, 0, 0]
+<pre><code>$ git clone https://github.com/modular/node
 </code></pre>
 			</section>
 			<section>
@@ -153,36 +150,20 @@ network.sectorMap(4);
 				<p><a href="https://github.com/modular"><i class="fa fa-github"></i> &nbsp;Modular GitHub</a></p>
 			</section>
 			<section>
-				<h2>What's the Modular Arithmetic Core?</h2>
-				<p>The Fast Modular Networking Arithmetic Core (fmna-core) package is a core component of Modular. It performs the modular arithmetic calculations that are used by nodes to determine how to route messages and ensure total network coverage.</p>
+				<h2>What's the Modular Node package?</h2>
+				<p>The Modular Node (node) package provides a NodeJS server script for hosting a full node (with HTTPS endpoint) on a Modular Network.</p>
 				<p><a href="https://github.com/modular/arithmetic-core"><i class="fa fa-github"></i> &nbsp;GitHub Repository</a></p>
 			</section>
 			<section>
 				<h2>Download</h2>
 				<p><a href="https://github.com/modular/arithmetic-core/releases"><i class="fa fa-download"></i> &nbsp;Latest Build</a></p>
-				<p><a href="https://cdn.jsdelivr.net/npm/@modular/fmna-core"><i class="fa fa-link"></i> &nbsp;CDN Copy</a></p>
 				<p>This package is released inder the <a href="https://github.com/modular/arithmetic-core/blob/master/LICENSE">MIT license</a>.</p>
-			</section>
-			<section>
-				<h2>Installation</h2>
-				<p class="mb-0">In a browser:</p>
-			</section>
-			<section class="code">
-<pre><code class="html">&lt;script src="fmna-core.min.js"&gt;&lt;/script&gt;
-</code></pre>
 			</section>
 			<section>
 				<p class="mb-0">Using npm:</p>
 			</section>
 			<section class="code">
-<pre><code>$ npm i --save @modular/fmna-core
-</code></pre>
-			</section>
-			<section>
-				<p class="mb-0">In Node.js:</p>
-			</section>
-			<section class="code">
-<pre><code class="js">const { ModularNetwork, ModSpace, CoverageTree } = require('@modular/fmna-core');
+<pre><code>$ npm i --save @modular/node
 </code></pre>
 			</section>
 			<section></section>

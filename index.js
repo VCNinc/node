@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept')
-  res.header('Access-Control-Allow-Methods', 'GET')
+  res.header('Access-Control-Allow-Methods', 'POST')
   next()
 })
 
@@ -16,13 +16,12 @@ app.use(bodyParser.json())
 
 ModularPlatform.standard().then((platform) => {
   if (process.env.ENDPOINT !== undefined && process.env.ENDPOINT !== null) platform.useEndpoint(process.env.ENDPOINT)
-
-  platform.setCoverage('0%1')
+  if (process.env.COVERAGE !== undefined && process.env.COVERAGE !== null) platform.setCoverage(process.env.COVERAGE)
 
   platform.initialize()
 
   app.get('/', (req, res) => {
-    res.redirect('https://github.com/modular')
+    return res.redirect('https://github.com/modular')
   })
 
   app.post('/', (req, res) => {

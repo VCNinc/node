@@ -20,6 +20,10 @@ ModularPlatform.standard().then((platform) => {
 
   platform.initialize()
 
+  platform.onReady(() => {
+    platform.announce()
+  })
+
   app.get('/', (req, res) => {
     return res.redirect('https://github.com/modular')
   })

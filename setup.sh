@@ -2,7 +2,8 @@
 
 # to run:
 # ssh root@... -i ssh
-# echo "ENDPOINT=\"https://example.org\"" >> /etc/environment
+# echo "ENDPOINT=\"https://alpha0.modularseed.xyz\"" >> /etc/environment
+# echo "COVERAGE=\"0%1\"" >> /etc/environment
 # wget -O - https://raw.githubusercontent.com/modular/node/master/setup.sh | bash
 
 su - nodejs

@@ -9,8 +9,5 @@ module.exports = {
     max_memory_restart: '250M',
     instances: 1,
     exec_mode: 'cluster'
-  }, {
-    script: './service-worker/',
-    watch: ['./service-worker']
   }]
 }

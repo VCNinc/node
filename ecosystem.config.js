@@ -2,7 +2,6 @@ module.exports = {
   apps: [{
     name: 'modular',
     script: 'index.js',
-    watch: '.',
     kill_timeout: 5000,
     listen_timeout: 5000,
     wait_ready: true,

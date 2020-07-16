@@ -126,3 +126,5 @@ modular/db
 modular/*
 posts
 users
+peers
+ignore

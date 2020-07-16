@@ -36,5 +36,42 @@ ModularPlatform.standard().then((platform) => {
     })
   })
 
-  app.listen(port)
+  let server = app.listen(port, () => {
+    process.send('ready')
+  })
+
+  process.on('SIGINT', () => {
+    Promise.all([
+      new Promise((resolve, reject) => {
+        server.close(() => {
+          resolve()
+        })
+      }),
+      new Promise((resolve, reject) => {
+        platform.network.db.peers.close(() => {
+          resolve()
+        })
+      }),
+      new Promise((resolve, reject) => {
+        platform.network.db.ignore.close(() => {
+          resolve()
+        })
+      }),
+      new Promise((resolve, reject) => {
+        platform.db.users.close(() => {
+          resolve()
+        })
+      }),
+      new Promise((resolve, reject) => {
+        platform.db.posts.close(() => {
+          resolve()
+        })
+      })
+    ]).then(() => {
+      process.exit(0)
+    }).catch((e) => {
+      console.error(e)
+      process.exit(1)
+    })
+  })
 })

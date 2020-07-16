@@ -11,7 +11,7 @@ pm2 delete all
 git clone https://github.com/modular/node
 cd node
 npm i
-pm2 start
+pm2 startOrRestart ecosystem.config.js
 pm2 save
-echo "* * * * * cd /home/nodejs/node && git fetch --all && git reset --hard origin/master && npm update && pm2 reload modular" >> cron
+echo "* * * * * cd /home/nodejs/node && git fetch --all && git reset --hard origin/master && npm update && pm2 startOrRestart ecosystem.config.js && pm2 save" >> cron
 crontab cron

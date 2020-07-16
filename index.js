@@ -36,7 +36,7 @@ ModularPlatform.standard().then((platform) => {
     })
   })
 
-  let server = app.listen(port, () => {
+  const server = app.listen(port, () => {
     process.send('ready')
   })
 

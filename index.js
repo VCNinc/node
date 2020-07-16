@@ -25,7 +25,7 @@ ModularPlatform.standard().then((platform) => {
   })
 
   app.get('/', (req, res) => {
-    return res.redirect('https://github.com/modular')
+    return res.redirect('https://modular.net')
   })
 
   app.post('/', (req, res) => {
